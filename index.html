@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gazipur Land Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="hero-badge">Gazipur Land Tools</div>
+      <h1>অল-ইন-ওয়ান জমির হিসাব ক্যালকুলেটর</h1>
+      <p>গাজীপুর/বাংলাদেশের প্রচলিত ইউনিটে যেকোনো শেইপের জমির পরিমাণ হিসাব করুন</p>
+      <div class="hero-tags">
+        <span>জমি মাপ</span>
+        <span>কাঠা/বিঘা/শতাংশ</span>
+        <span>যেকোনো শেইপ</span>
+      </div>
+    </header>
+
+    <section class="panel panel-form">
+      <div class="grid two-col">
+        <label>
+          শেইপ নির্বাচন করুন
+          <select id="shapeSelect">
+            <option value="rectangle">Rectangle (দৈর্ঘ্য × প্রস্থ)</option>
+            <option value="triangle">Triangle (ভিত্তি × উচ্চতা ÷ 2)</option>
+            <option value="trapezium">Trapezium ((a+b) × h ÷ 2)</option>
+            <option value="circle">Circle (pi × r²)</option>
+            <option value="polygon">Polygon (Coordinate ভিত্তিক)</option>
+            <option value="draw">Draw Tool (এঁকে হিসাব)</option>
+          </select>
+        </label>
+
+        <label>
+          ইনপুট একক
+          <select id="inputUnit">
+            <option value="ft">Feet</option>
+            <option value="m">Meter</option>
+            <option value="yd">Yard</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="shapeFields"></div>
+
+      <div class="actions">
+        <button id="calcBtn">হিসাব করুন</button>
+        <button id="resetBtn" class="ghost">রিসেট</button>
+      </div>
+    </section>
+
+    <section class="panel panel-result">
+      <h2>ফলাফল</h2>
+      <div id="result" class="result empty">এখনও হিসাব করা হয়নি</div>
+    </section>
+
+    <section class="panel note">
+      <h3>ব্যবহৃত কনভার্সন (বাংলাদেশ প্রচলিত)</h3>
+      <ul>
+        <li>1 শতাংশ/ডেসিমেল = 435.6 sq ft</li>
+        <li>1 কাঠা = 720 sq ft</li>
+        <li>1 বিঘা = 20 কাঠা = 14,400 sq ft</li>
+        <li>1 ছটাক = 45 sq ft (1/16 কাঠা)</li>
+        <li>1 একর = 43,560 sq ft</li>
+      </ul>
+      <p class="small">লোকাল ভ্যারিয়েশন থাকতে পারে; দরকার হলে কনভার্সন ফ্যাক্টর পরে কাস্টমাইজ করা যাবে।</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
