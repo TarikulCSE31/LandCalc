@@ -1,0 +1,15 @@
+title: LandCalc
+description: >-
+  Bangladesh land area calculator — Gazipur-friendly units, shapes, draw board,
+  and common conversions (decimal/katha/bigha).
+author: TarikulCSE31
+remote_theme: pages-themes/cayman@v0.2.0
+url: https://tarikulcse31.github.io
+baseurl: /LandCalc
+
+plugins:
+  - jekyll-remote-theme
+
+markdown: kramdown
+kramdown:
+  input: GFM

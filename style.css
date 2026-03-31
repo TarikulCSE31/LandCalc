@@ -288,3 +288,9 @@ h3 {
     flex-wrap: wrap;
   }
 }
+
+/* GitHub Pages — Cayman theme wrapper: use full width for the app */
+.main-content {
+  max-width: none;
+  padding: 0;
+}
