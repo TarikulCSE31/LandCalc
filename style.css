@@ -1,13 +1,14 @@
 :root {
-  --bg: #eef4ea;
+  --bg: #edf3ee;
+  --bg-soft: #f5faf6;
   --panel: #ffffff;
-  --text: #1d2b1f;
-  --muted: #5f6e61;
-  --primary: #2f7d32;
-  --primary-dark: #215c24;
-  --primary-soft: #e8f5e9;
-  --earth: #8d6e63;
-  --border: #d7e2d3;
+  --text: #122018;
+  --muted: #5a685f;
+  --primary: #23823d;
+  --primary-dark: #14642b;
+  --primary-soft: #e8f6ec;
+  --earth: #7f5f48;
+  --border: #d6e4d8;
   --danger: #c62828;
 }
 
@@ -15,78 +16,93 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background:
-    radial-gradient(circle at 10% 0%, #f7fbf5 0%, rgba(247, 251, 245, 0) 35%),
-    radial-gradient(circle at 90% 0%, #f2f9ef 0%, rgba(242, 249, 239, 0) 35%),
-    var(--bg);
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
   color: var(--text);
+  background:
+    radial-gradient(circle at 7% -4%, rgba(35, 130, 61, 0.15), rgba(35, 130, 61, 0) 28%),
+    radial-gradient(circle at 95% 2%, rgba(127, 95, 72, 0.12), rgba(127, 95, 72, 0) 28%),
+    linear-gradient(180deg, #f7fbf8 0%, #eef4ef 48%, #ebf2ed 100%);
 }
 
 .app {
-  max-width: 960px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 24px 16px 40px;
+  padding: 28px 18px 46px;
 }
 
 .hero {
-  margin-bottom: 16px;
-  border-radius: 16px;
-  padding: 18px 18px 16px;
-  border: 1px solid #d4e6d1;
+  margin-bottom: 18px;
+  border-radius: 22px;
+  padding: 22px 22px 18px;
+  border: 1px solid #d5e7d9;
   background:
-    linear-gradient(135deg, rgba(47, 125, 50, 0.09), rgba(141, 110, 99, 0.05)),
-    #f9fcf8;
-  box-shadow: 0 10px 24px rgba(33, 92, 36, 0.08);
+    linear-gradient(135deg, rgba(35, 130, 61, 0.14), rgba(127, 95, 72, 0.08)),
+    linear-gradient(180deg, #fbfefc, #f3faf4);
+  box-shadow:
+    0 18px 40px rgba(20, 100, 43, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65);
 }
 
 .hero-badge {
   display: inline-block;
-  border: 1px solid rgba(33, 92, 36, 0.18);
+  border: 1px solid rgba(20, 100, 43, 0.24);
   color: var(--primary-dark);
-  background: #f0f8ef;
+  background: rgba(237, 249, 240, 0.95);
   border-radius: 999px;
-  font-size: 0.75rem;
-  padding: 4px 10px;
-  margin-bottom: 8px;
-  font-weight: 600;
+  font-size: 0.76rem;
+  letter-spacing: 0.03em;
+  padding: 4px 11px;
+  margin-bottom: 9px;
+  font-weight: 700;
 }
 
 .hero h1 {
-  margin: 0 0 8px;
-  font-size: clamp(1.3rem, 2.6vw, 2rem);
+  margin: 0 0 10px;
+  line-height: 1.26;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.34rem, 2.35vw, 2.06rem);
 }
 
 .hero p {
   margin: 0;
   color: var(--muted);
+  max-width: 72ch;
 }
 
 .hero-tags {
-  margin-top: 10px;
+  margin-top: 12px;
   display: flex;
-  gap: 8px;
+  gap: 9px;
   flex-wrap: wrap;
 }
 
 .hero-tags span {
-  font-size: 0.78rem;
-  padding: 5px 10px;
+  font-size: 0.79rem;
+  padding: 6px 11px;
   border-radius: 999px;
-  background: var(--primary-soft);
+  background: rgba(232, 246, 236, 0.95);
   color: var(--primary-dark);
-  border: 1px solid #d4e8d3;
+  border: 1px solid #d0e7d5;
+  font-weight: 600;
 }
 
 .panel {
-  background: var(--panel);
+  position: relative;
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 16px;
+  border-radius: 18px;
+  padding: 18px;
   margin-top: 14px;
-  box-shadow: 0 6px 18px rgba(34, 68, 38, 0.06);
+  backdrop-filter: blur(4px);
+  box-shadow:
+    0 12px 30px rgba(17, 35, 24, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
 .panel-form {
@@ -99,7 +115,7 @@ body {
 
 .grid {
   display: grid;
-  gap: 12px;
+  gap: 13px;
 }
 
 .two-col {
@@ -110,85 +126,107 @@ label {
   display: flex;
   flex-direction: column;
   gap: 7px;
-  font-size: 0.95rem;
+  color: #2e3d34;
+  font-size: 0.93rem;
+  font-weight: 600;
 }
 
 input,
 select,
 textarea {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 10px 12px;
-  font-size: 0.95rem;
   width: 100%;
-  background: #fcfefb;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 11px 12px;
+  font-size: 0.95rem;
+  color: #223229;
+  background: #fbfefb;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: #bfd6c4;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid rgba(47, 125, 50, 0.2);
+  outline: none;
   border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(35, 130, 61, 0.17);
 }
 
 textarea {
-  min-height: 125px;
+  min-height: 126px;
   resize: vertical;
-  line-height: 1.35;
+  line-height: 1.45;
 }
 
 .shape-box {
   margin-top: 14px;
-  padding: 12px;
-  border: 1px dashed #bdd0b8;
-  border-radius: 10px;
-  background: #fbfef9;
+  padding: 14px;
+  border: 1px dashed #c2d8c6;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fbfefb, var(--bg-soft));
 }
 
 .hint {
-  margin: 6px 0 0;
+  margin: 7px 0 0;
   color: var(--muted);
   font-size: 0.85rem;
 }
 
 .actions {
-  margin-top: 14px;
+  margin-top: 15px;
   display: flex;
   gap: 10px;
 }
 
 button {
-  border: 1px solid var(--primary);
-  background: linear-gradient(180deg, #3f9743, var(--primary));
-  color: #fff;
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 0.95rem;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  padding: 10px 15px;
+  font-size: 0.92rem;
+  font-weight: 700;
   cursor: pointer;
-  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  background: linear-gradient(180deg, #31a14e, #22823d);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(35, 130, 61, 0.23);
 }
 
 button:hover {
-  filter: brightness(1.05);
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+}
+
+button:active {
+  transform: translateY(0);
 }
 
 button.ghost {
-  background: #f8fbf7;
-  color: var(--primary);
-  border: 1px solid #bdd0b8;
+  background: #f7fbf8;
+  color: var(--primary-dark);
+  border-color: #bfd5c3;
+  box-shadow: 0 3px 9px rgba(17, 35, 24, 0.07);
 }
 
 h2,
 h3 {
   margin: 0 0 10px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
 .result {
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 12px;
-  background: linear-gradient(180deg, #f9fdf8, #f4faf2);
-  line-height: 1.5;
+  border-radius: 13px;
+  padding: 13px 14px;
+  background: linear-gradient(180deg, #fafdfa, #f2f9f3);
+  line-height: 1.56;
 }
 
 .result.empty {
@@ -196,37 +234,38 @@ h3 {
 }
 
 .result .area-main {
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-size: 1.16rem;
+  font-weight: 700;
   color: var(--primary-dark);
   margin-bottom: 6px;
 }
 
 .result .error {
   color: var(--danger);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .result ul {
   margin: 8px 0 0;
-  padding-left: 20px;
+  padding-left: 19px;
 }
 
 .note ul {
   margin: 8px 0;
-  color: #3e4d3f;
+  color: #3f5045;
 }
 
 .small {
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   margin: 6px 0 0;
 }
 
 .draw-meta {
   margin-top: 8px;
-  color: #435545;
+  color: #47604d;
   font-size: 0.86rem;
+  font-weight: 500;
 }
 
 .draw-tools {
@@ -238,26 +277,30 @@ h3 {
 
 .draw-tools button {
   padding: 8px 12px;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
 }
 
 .draw-zoom-label {
   align-self: center;
-  font-size: 0.86rem;
-  font-weight: 600;
+  font-size: 0.84rem;
+  font-weight: 700;
   color: var(--primary-dark);
-  padding: 0 4px;
+  background: #ecf7ef;
+  border: 1px solid #cde2d2;
+  border-radius: 999px;
+  padding: 5px 10px;
 }
 
 .draw-board-wrap {
   margin-top: 12px;
-  border: 1px solid #b9ceb5;
-  border-radius: 12px;
-  background: #f6fbf4;
-  padding: 8px;
+  border: 1px solid #b6ceb8;
+  border-radius: 13px;
+  background: linear-gradient(180deg, #f8fcf8, #f2f8f2);
+  padding: 10px;
   overflow: auto;
   max-width: 100%;
   max-height: min(72vh, 640px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .draw-board-inner {
@@ -270,8 +313,8 @@ h3 {
   height: 420px;
   max-width: none;
   display: block;
-  border-radius: 9px;
-  border: 1px solid #cfdfcc;
+  border-radius: 10px;
+  border: 1px solid #c8dbc9;
   background: #fbfef9;
   cursor: crosshair;
   vertical-align: top;
@@ -279,13 +322,37 @@ h3 {
 
 .draw-info {
   margin-top: 8px;
-  font-size: 0.86rem;
-  color: #4f6050;
+  font-size: 0.85rem;
+  color: #4f6355;
+}
+
+@media (max-width: 720px) {
+  .app {
+    padding: 18px 12px 32px;
+  }
+
+  .hero {
+    padding: 16px 14px 14px;
+    border-radius: 16px;
+  }
+
+  .panel {
+    border-radius: 14px;
+    padding: 14px;
+  }
 }
 
 @media (max-width: 560px) {
   .actions {
     flex-wrap: wrap;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .draw-tools button {
+    width: auto;
   }
 }
 
